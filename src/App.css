@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.App{
+  min-width: 100vw;
+  min-height: 100vh;
+
+  background-color: #8258e5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.App>p{
+  font-size: 2vw;
+  color: #fff;
+  margin-top: 3vw;
+}
+.input-receive-text{
+  
+  min-width: 50vw;
+  min-height: 10vh;
+
+  margin-top: 2vw;
+}
+/* 715ac2 */
+.input-receive-text > textarea{
+  padding: 10px 10px;
+
+  width: 100%;
+  min-height: 10vh;
+
+  background-color: #5b3da0;
+
+  color: #fff;
+  display: block;
+
+  border: 0.2px solid #48317c;
+  border-radius: 10px;
+}
+
+.input-receive-text > textarea:focus{
+  box-shadow: 0 0 0 0;
+  border: 0.2px solid #48317c;
+  border-radius: 10px;
+  outline: 0;
+}
+.input-receive-text > textarea::placeholder{
+
+  color: #fff;
+}
+.btn-sbt-txt > .btn{
+  width: 8vw;
+  height: 4vh;
+  background-color: #715ac2;
+  color: #fff;
+
+  border-radius: 5px;
+  font-size: 15px;
+
+  margin-top: 1.5vw;
+}
+
+.text-result{
+  min-width: 50vw;
+  min-height: 10vh;
+
+  margin-top: 2vw;
+}
+.text-result >textarea{
+  padding: 10px 10px;
+
+  width: 100%;
+  min-height: 10vh;
+
+  background-color: #5b3da0;
+
+  color: #fff;
+  display: block;
+
+  border: 0.2px solid #48317c;
+  border-radius: 10px;
+}
