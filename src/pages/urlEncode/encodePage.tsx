@@ -7,7 +7,7 @@ function DecodePage(){
   const [textAlter, setAlterText] = useState('...')
 
   function sbtText(){
-    api.post('/enviaTextoDecode', {
+    api.post('/enviaTextoEncode', {
       texto: text
     }).then(res =>{
       setAlterText(res.data)
@@ -48,7 +48,7 @@ function DecodePage(){
           </div>
   
           <div className="btn-sbt-txt">
-            <button className="btn" onClick={sbtText}>Decode</button>
+            <button className="btn" onClick={sbtText}>Encode</button>
           </div>
   
           <div className='text-result'>

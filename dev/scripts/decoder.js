@@ -1,7 +1,7 @@
 
 
 module.exports = {
-    decode(req, res){
+    decodeOrCode(req, res, mode){
         var arrList= [
    
             { codigo: ' '  ,    codigoReplace: '%20'},
@@ -32,26 +32,48 @@ module.exports = {
             
          
         ]        
-        
-        let replaceString = []
-        for(var i=0; i < arrList.length; i++) {
-            let textoInicial = String(req.body.texto)
-            let strCodigo = String(arrList[i].codigo)
-            let strCodigoReplace =String(arrList[i].codigoReplace)
-        
-           
-            if(i === 0){
-                let replacado = textoInicial.replaceAll( strCodigoReplace, strCodigo )
-                replaceString.push(replacado)
-            } else{
-                let str = String(replaceString[0])
-                replaceString.pop()
-                let remarquei = str.replaceAll( strCodigoReplace, strCodigo )
-                replaceString.push(remarquei)
+        if(mode === 'decode'){
+            let replaceString = []
+            for(var i=0; i < arrList.length; i++) {
+                let textoInicial = String(req.body.texto)
+                let strCodigo = String(arrList[i].codigo)
+                let strCodigoReplace =String(arrList[i].codigoReplace)
+            
+            
+                if(i === 0){
+                    let replacado = textoInicial.replaceAll( strCodigoReplace, strCodigo )
+                    replaceString.push(replacado)
+                } else{
+                    let str = String(replaceString[0])
+                    replaceString.pop()
+                    let remarquei = str.replaceAll( strCodigoReplace, strCodigo )
+                    replaceString.push(remarquei)
+                }
+            
             }
-        
+            res.send(String(replaceString))
+        } else if(mode === 'encode'){
+            let replaceString = []
+            for(var i=0; i < arrList.length; i++) {
+                let textoInicial = String(req.body.texto)
+                let strCodigo = String(arrList[i].codigoReplace) 
+                let strCodigoReplace =  String(arrList[i].codigo)  
+            
+            
+                if(i === 0){
+                    let replacado = textoInicial.replaceAll( strCodigoReplace, strCodigo )
+                    replaceString.push(replacado)
+                } else{
+                    let str = String(replaceString[0])
+                    replaceString.pop()
+                    let remarquei = str.replaceAll( strCodigoReplace, strCodigo )
+                    replaceString.push(remarquei)
+                }
+            
+            }
+            res.send(String(replaceString))
         }
-        res.send(String(replaceString))  
+          
     }
       
 }

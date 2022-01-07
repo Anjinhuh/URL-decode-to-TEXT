@@ -9,7 +9,16 @@ app.use(require("cors")())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
-app.post('/enviaTexto', decodify.decode)
+app.post('/enviaTextoDecode', (req, res) =>{
+    
+        decodify.decodeOrCode(req, res, 'decode')
+        
+})
+app.post('/enviaTextoEncode', (req, res) =>{
+    
+        decodify.decodeOrCode(req, res, 'encode')
+
+})
  
 var server = http.createServer(app); 
 server.listen(3001);
