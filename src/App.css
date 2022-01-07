@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  font-size: 62.5%;
 }
 
 .App{
@@ -12,12 +13,39 @@
   min-height: 100vh;
 
   background-color: #8258e5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
+}
+.head-cases{
+  min-width: 70vw;
+  max-width: 70vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.case-div{
+  display: flex;
+  justify-content: center;
+  min-width: 6vw;
+  background-color: #5b3da0;
+  color: #fff;
+  font-size: calc(1.4rem + 0.6vw);
+  margin-right: 0.8vw;
+}
+.area-util{
+ 
+  min-width: 70vw;
+  max-width: 80vw;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #6e41d6;
+  border-radius: 20px;
 }
-.App>p{
+.area-util>p{
   font-size: 2vw;
   color: #fff;
   margin-top: 3vw;
@@ -43,6 +71,8 @@
 
   border: 0.2px solid #48317c;
   border-radius: 10px;
+
+  font-size: calc(1rem + 0.5vw);
 }
 
 .input-receive-text > textarea:focus{
@@ -56,15 +86,18 @@
   color: #fff;
 }
 .btn-sbt-txt > .btn{
-  width: 8vw;
+  width: calc(2rem + 7vw);
   height: 4vh;
   background-color: #715ac2;
   color: #fff;
 
   border-radius: 5px;
-  font-size: 15px;
+  font-size: calc(1rem + 0.5vw);
 
   margin-top: 1.5vw;
+}
+.btn:focus{
+  animation: animation 2s linear;
 }
 
 .text-result{
@@ -86,4 +119,18 @@
 
   border: 0.2px solid #48317c;
   border-radius: 10px;
+
+  font-size: calc(1rem + 0.5vw);
+}
+
+@keyframes animation{
+  0%{
+  background-color: #8258e5;
+  } 
+  50%{
+    background-color: #77AF07;
+  }
+  100%{
+    background-color: #8258e5;
+    } 
 }

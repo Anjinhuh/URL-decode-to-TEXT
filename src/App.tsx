@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css'
 import api from './services/api'
 
@@ -20,18 +20,45 @@ function App() {
 
   return (
     <div className="App">
-      <p>URL Decode</p>
-      <div className="input-receive-text">
-        <textarea name="input" id="input" onChange={(e) => setText(e.target.value)} placeholder="Digite ou cole seu texto aqui"></textarea>
-      </div>
+      <div className="head-cases">
 
-      <div className="btn-sbt-txt">
-        <button className="btn" onClick={sbtText}>Decode</button>
-      </div>
+        <div className="case-div">
+         <p>URL Decode</p>
+        </div>
 
-      <div className='text-result'>
-      <textarea value={String(textAlter)} id='resultado-text' disabled={true}></textarea>
+        <div className="case-div">
+         <p>URL Decode</p>
+        </div>
+
+        <div className="case-div">
+         <p>URL Decode</p>
+        </div>
+
+        <div className="case-div">
+         <p>URL Decode</p>
+        </div>
+
+        <div className="case-div">
+         <p>URL Decode</p>
+        </div>
+
+        
+        
       </div>
+      <div className="area-util">
+        <div className="input-receive-text">
+          <textarea name="input" id="input" onChange={(e) => setText(e.target.value)} placeholder="Digite ou cole seu texto aqui"></textarea>
+        </div>
+
+        <div className="btn-sbt-txt">
+          <button className="btn" onClick={sbtText}>Decode</button>
+        </div>
+
+        <div className='text-result'>
+          <textarea value={String(textAlter)} id='resultado-text' disabled={true}></textarea>
+        </div>
+      </div>
+     
     </div>
   );
 }
