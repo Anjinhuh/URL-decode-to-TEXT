@@ -12,11 +12,12 @@ module.exports = {
             { codigo: '<'  , 	codigoReplace: '%3C'},
             { codigo: '>'  ,	codigoReplace: '%3E'},
             { codigo: '#'  ,	codigoReplace: '%23'},
-            
             { codigo: '|'  ,	codigoReplace: '%7'},
             { codigo: '!'  ,    codigoReplace: '%21'},
             { codigo: '#'  ,    codigoReplace: '%23'},
+
             { codigo: '&'  ,    codigoReplace: '%26'},
+
             { codigo: "'"  ,    codigoReplace: '%27'},
             { codigo: '('  ,    codigoReplace: '%28'},
             { codigo: ')'  ,    codigoReplace: '%29'},
@@ -72,6 +73,23 @@ module.exports = {
             
             }
             res.send(String(replaceString))
+        } else if(mode === 'getCode'){
+            let arr = []
+            for(var j=0; j<arrList.length; j++){
+                
+
+                let codeUsual = String(arrList[j].codigo)
+                let codeUnsual = String(arrList[j].codigoReplace) 
+                arr.push(
+                    {
+                        codigo: codeUsual,
+                        codePoor: codeUnsual
+                    }
+                )
+            }
+            res.send(arr)
+            
+
         }
           
     }

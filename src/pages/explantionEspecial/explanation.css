@@ -1,0 +1,20 @@
+.explanation-content{
+    min-width: 90%;
+    min-height: 70%;
+    background-color: #2D142C;
+    border-radius: 10px;
+
+    display: flex;
+    color: #EE4540;
+    font-size: calc(2vw + 2vh);
+    padding: 2rem 2rem;
+}
+.codigoNormal, .CodigoAlterado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+.CodigoAlterado{
+    margin-left: 5rem;
+}

@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import './explanation.css'
+import api from '../../services/api'
+
 
 
 
 function ExplanationEspecialCharacters(){
+  useEffect(() =>{
+    api.get('/retornaCodigos').then(x =>{
+      console.log(x)
+
+    })
+})
     return(
        
       <div className="App">
@@ -30,7 +39,19 @@ function ExplanationEspecialCharacters(){
             <div className="div-title">
               <p>URL Caracteres</p>
             </div>
-            <div className="div-text-btn">
+
+            <div className="explanation-content">
+              
+              <div className="codigoNormal">
+                  <p>Codigo Normal</p>
+                  <p>%</p>
+              </div>
+
+              <div className="CodigoAlterado">
+                  <p>Codigo Alterado</p>
+                  <p>%25</p>
+              </div>
+
             </div>
            
             

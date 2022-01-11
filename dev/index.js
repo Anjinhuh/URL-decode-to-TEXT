@@ -15,8 +15,10 @@ app.post('/enviaTextoDecode', (req, res) =>{
         
 })
 app.post('/enviaTextoEncode', (req, res) =>{
-    
         decodify.decodeOrCode(req, res, 'encode')
+})
+app.get('/retornaCodigos', (req, res) =>{
+        decodify.decodeOrCode(req, res, 'getCode')
 
 })
  
