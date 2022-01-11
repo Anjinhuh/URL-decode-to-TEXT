@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './explanation.css'
 import api from '../../services/api'
 
@@ -6,12 +6,15 @@ import api from '../../services/api'
 
 
 function ExplanationEspecialCharacters(){
+    let arr: any = []
   useEffect(() =>{
-    api.get('/retornaCodigos').then(x =>{
-      console.log(x)
-
+    api.get('/retornaCodigos').then((x) =>{
+      arr.push(x.data)
+      console.log(arr)
     })
-})
+  }, []) 
+    
+    
     return(
        
       <div className="App">
@@ -42,15 +45,19 @@ function ExplanationEspecialCharacters(){
 
             <div className="explanation-content">
               
-              <div className="codigoNormal">
-                  <p>Codigo Normal</p>
-                  <p>%</p>
-              </div>
 
-              <div className="CodigoAlterado">
+
+                <div className="codigoNormal">
+                  <p>Codigo Normal</p>
+                  
+                </div>
+
+                <div className="CodigoAlterado">
                   <p>Codigo Alterado</p>
                   <p>%25</p>
-              </div>
+                </div>
+
+             
 
             </div>
            
