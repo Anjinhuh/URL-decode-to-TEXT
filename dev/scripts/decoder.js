@@ -3,7 +3,7 @@
 module.exports = {
     decodeOrCode(req, res, mode){
         var arrList= [
-   
+            { codigo: '%'  ,	codigoReplace: '%25'},
             { codigo: ' '  ,    codigoReplace: '%20'},
             { codigo: '"'  ,    codigoReplace: '%22'},
             { codigo: '$'  ,    codigoReplace: '%24'},
@@ -12,7 +12,7 @@ module.exports = {
             { codigo: '<'  , 	codigoReplace: '%3C'},
             { codigo: '>'  ,	codigoReplace: '%3E'},
             { codigo: '#'  ,	codigoReplace: '%23'},
-            { codigo: '%'  ,	codigoReplace: '%25'},
+            
             { codigo: '|'  ,	codigoReplace: '%7'},
             { codigo: '!'  ,    codigoReplace: '%21'},
             { codigo: '#'  ,    codigoReplace: '%23'},
@@ -26,7 +26,7 @@ module.exports = {
             { codigo: ';'  ,    codigoReplace: '%3B'},
             { codigo: '='  ,    codigoReplace: '%3D'},
             { codigo: '?'  ,    codigoReplace: '%3F'},
-            { codigo: '@'  ,    codigoReplace: '%4-'},
+            { codigo: '@'  ,    codigoReplace: '%40'},
             { codigo: '['  ,    codigoReplace: '%5B'},
             { codigo: ']'  ,    codigoReplace: '%5D'},
             
@@ -54,13 +54,13 @@ module.exports = {
             res.send(String(replaceString))
         } else if(mode === 'encode'){
             let replaceString = []
-            for(var i=0; i < arrList.length; i++) {
+            for(var y=0; y < arrList.length; y++) {
                 let textoInicial = String(req.body.texto)
-                let strCodigo = String(arrList[i].codigoReplace) 
-                let strCodigoReplace =  String(arrList[i].codigo)  
+                let strCodigo = String(arrList[y].codigoReplace) 
+                let strCodigoReplace =  String(arrList[y].codigo)  
             
             
-                if(i === 0){
+                if(y === 0){
                     let replacado = textoInicial.replaceAll( strCodigoReplace, strCodigo )
                     replaceString.push(replacado)
                 } else{
