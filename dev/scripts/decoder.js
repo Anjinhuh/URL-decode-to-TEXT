@@ -75,19 +75,30 @@ module.exports = {
             res.send(String(replaceString))
         } else if(mode === 'getCode'){
             let arr = []
+            let arr2 = []
             for(var j=0; j<arrList.length; j++){
                 
 
                 let codeUsual = String(arrList[j].codigo)
                 let codeUnsual = String(arrList[j].codigoReplace) 
-                arr.push(
-                    {
-                        codigo: codeUsual,
-                        codePoor: codeUnsual
-                    }
-                )
+                if(j>arrList.length/2){
+                    arr.push(
+                        {
+                            codigo: codeUsual,
+                            codePoor: codeUnsual
+                        }
+                    )
+                } else {
+                    arr2.push(
+                        {
+                            codigo: codeUsual,
+                            codePoor: codeUnsual
+                        }
+                    )
+                }
+                
             }
-            res.send(arr)
+            res.send({arr, arr2})
             
 
         }

@@ -28,11 +28,7 @@ function DecodePage(){
         </div>
 
         <div className="div-item">
-            <a href='http://localhost:3000'>URL HTML</a>
-        </div>
-
-        <div className="div-item">
-            <a href='http://localhost:3000'>URL CHARACTERS</a>
+            <a href='http://localhost:3000/explanation'>URL CHARACTERS</a>
         </div>
       </section>
       

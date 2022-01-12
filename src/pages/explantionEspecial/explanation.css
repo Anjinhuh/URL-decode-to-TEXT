@@ -1,20 +1,42 @@
 .explanation-content{
     min-width: 90%;
+    max-width: 90%;
     min-height: 70%;
     background-color: #2D142C;
     border-radius: 10px;
 
     display: flex;
     color: #EE4540;
-    font-size: calc(2vw + 2vh);
-    padding: 2rem 2rem;
+    
+  
+
+    justify-content: space-between;
 }
 .codigoNormal, .CodigoAlterado{
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+
     height: auto;
+}
+.codigoNormal>p {
+    font-size: calc(0.8vw + 0.6vh);
+
+}
+
+.CodigoAlterado>p{
+    font-size: calc(0.8vw + 0.6vh);
 }
 .CodigoAlterado{
     margin-left: 5rem;
+}
+.fix-visual{
+    padding: 2rem 8rem;
+    display: flex;
+    font-size: calc(2.7vw + 2.8vh);
+}
+.box-codes{
+    width: 2vw;
+    height: 3vh;
 }

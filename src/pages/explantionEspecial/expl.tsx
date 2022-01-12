@@ -6,13 +6,15 @@ import api from '../../services/api'
 
 
 function ExplanationEspecialCharacters(){
-    let arr: any = []
-  useEffect(() =>{
-    api.get('/retornaCodigos').then((x) =>{
-      arr.push(x.data)
-      console.log(arr)
-    })
-  }, []) 
+  let [arrFirst, setArrFirst] = useState([])
+  let [arrSecond, setArrSecond] = useState([])
+
+useEffect(() =>{
+  api.get('/retornaCodigos').then((x) =>{
+    setArrFirst(x.data.arr)
+    setArrSecond(x.data.arr2)
+  })
+}, []) 
     
     
     return(
@@ -29,11 +31,7 @@ function ExplanationEspecialCharacters(){
         </div>
 
         <div className="div-item">
-            <a href='http://localhost:3000'>URL HTML</a>
-        </div>
-
-        <div className="div-item">
-            <a href='http://localhost:3000'>URL CHARACTERS</a>
+            <a href='http://localhost:3000/explanation'>URL CHARACTERS</a>
         </div>
       </section>
         
@@ -44,21 +42,53 @@ function ExplanationEspecialCharacters(){
             </div>
 
             <div className="explanation-content">
-              
 
+            <div className="fix-visual">
+              <div className="codigoNormal">
 
-                <div className="codigoNormal">
                   <p>Codigo Normal</p>
-                  
-                </div>
+                  {arrSecond.map((e) => 
+                  <div  className='box-codes'>
+                    <p>{e['codigo']}</p>
+                  </div>
+                  )}
 
+                </div>
                 <div className="CodigoAlterado">
+
                   <p>Codigo Alterado</p>
-                  <p>%25</p>
+                  {arrSecond.map((e) => 
+                  <div className='box-codes'>
+                    <p>{e['codePoor']}</p>
+                  </div>
+                  )}
+
                 </div>
+            </div>
 
-             
+            <div className="fix-visual">
+              <div className="codigoNormal">
 
+                  <p>Codigo Normal</p>
+                  {arrFirst.map((e) => 
+                  <div className='box-codes'>
+                    <p>{e['codigo']}</p>
+                  </div>
+                  )}
+
+                </div>
+                <div className="CodigoAlterado">
+
+                  <p>Codigo Alterado</p>
+                  {arrFirst.map((e) => 
+                  <div  className='box-codes'>
+                    <p>{e['codePoor']}</p>
+                  </div>
+                  )}
+
+                </div>
+            </div>
+              
             </div>
            
             
