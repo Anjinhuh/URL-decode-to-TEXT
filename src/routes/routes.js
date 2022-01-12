@@ -9,7 +9,7 @@ export default function Routes(){
     return(
         <BrowserRouter>
             <Switch>
-                <Route path="/decode" exact component={decodePage} />
+                <Route path="/" exact component={decodePage} />
                 <Route path="/encode" exact component={encodePage} />
                 <Route path="/explanation" exact component={explanation} />
             </Switch>
