@@ -1,4 +1,0 @@
-{
-    "version": 2, 
-    "builds": [ { "src": "./dev/index.js", "use": "@now/node-server" }]
-}
