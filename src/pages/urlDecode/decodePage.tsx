@@ -3,11 +3,13 @@ import './app.css'
 import api from '../../services/api'
 
 
+
+
 function DecodePage(){
     const [text,setText] = useState<String>()
     const [textAlter, setAlterText] = useState('...')
     function sbtText(){
-      api.post('/enviaTextoDecode', {
+      api.post('./services/api', {
         texto: text
       }).then(res =>{
         setAlterText(res.data)

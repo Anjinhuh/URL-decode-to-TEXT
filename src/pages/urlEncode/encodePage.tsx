@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import api from '../../services/api'
 
+
 function DecodePage(){
   const [text,setText] = useState<String>()
   const [textAlter, setAlterText] = useState('...')
+
   function sbtText(){
     api.post('/enviaTextoEncode', {
       texto: text
