@@ -9,7 +9,7 @@ function DecodePage(){
     const [text,setText] = useState<String>()
     const [textAlter, setAlterText] = useState('...')
     function sbtText(){
-      api.post('./services/api', {
+      api.post('/enviaTextoDecode', {
         texto: text
       }).then(res =>{
         setAlterText(res.data)
