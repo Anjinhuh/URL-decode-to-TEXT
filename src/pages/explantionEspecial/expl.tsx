@@ -19,7 +19,7 @@ useEffect(() =>{
     
     
     return(
-       
+      
       <div className="App">
 
       <section className="lista-itens">
@@ -97,6 +97,7 @@ useEffect(() =>{
         </div>
         
       </div>
+      
     )
 }
 
