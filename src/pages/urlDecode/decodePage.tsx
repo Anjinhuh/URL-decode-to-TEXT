@@ -4,17 +4,16 @@ import api from '../../services/api'
 
 
 
-
 function DecodePage(){
     const [text,setText] = useState<String>()
     const [textAlter, setAlterText] = useState('...')
-    function sbtText(){
+     function sbtText(){
       api.post('/enviaTextoDecode', {
-        texto: text
+        texto: text,
       }).then(res =>{
         setAlterText(res.data)
       }).catch(err =>{
-        throw err
+        console.log(err)
       })
     }
     return(
@@ -24,15 +23,15 @@ function DecodePage(){
 
       <section className="lista-itens">
         <div className="div-item">
-          <a href='http://localhost:3000/decode'>URL DECODE</a>
+          <a href='https://www.easyurldecoder.online/'>URL DECODE</a>
         </div>
 
         <div className="div-item">
-            <a href='http://localhost:3000/encode'>URL ENCODE</a>
+            <a href='https://www.easyurldecoder.online/encode'>URL ENCODE</a>
         </div>
 
         <div className="div-item">
-            <a href='http://localhost:3000/explanation'>URL CHARACTERS</a>
+            <a href='https://www.easyurldecoder.online/explanation'>URL CHARACTERS</a>
         </div>
       </section>
         
